@@ -92,7 +92,7 @@ void draw() {
      } else {
        stroke(notSelectedColor);
      }
-     
+     line(plotRight, point[1], plotLeft, point[1]);
      ellipse(point[0], point[1], 6, 6);
        
   }
@@ -173,6 +173,7 @@ void drawDataPoints(int col) {
   noFill();
   for (int row = 0; row < dataPoints.size(); row++) {
     float[] point = dataPoints.get(row);
+    line(plotRight, point[1], plotLeft, point[1]);
     ellipse(point[0], point[1], 6, 6);
   }  
 }
