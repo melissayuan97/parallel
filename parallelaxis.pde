@@ -183,7 +183,9 @@ void mouseRollover(int col) { //use mouseMoved
     float dataValue = data.getFloat(row, col);
     float x = plotMiddle;
     float y = map(dataValue, minValue, maxValue, plotTop, plotBottom);
-    if(dist(x,y,mouseX,mouseY) < 8) {
+//  only check y value and that mouseX is within plot (not margins)    
+//    if(dist(x,y,mouseX,mouseY) < 8) {
+    if ((abs(y - mouseY) < 8) && (plotLeft < mouseX) && (mouseX < plotRight)) {
       fill(0);
       textAlign(CENTER);
       text(dataValue, mouseX, mouseY);
